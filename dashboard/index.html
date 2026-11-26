@@ -1,15 +1,30 @@
 <!doctype html>
+<!-- Token Radar — the static shell. The page itself is rendered by dashboard/app.js
+     from the data main.ts writes beside it (data.js); this document only mounts the
+     app, loads its styles, and tells a visitor without scripts what is going on. -->
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Token Radar: pre-token protocols ranked by implied value</title>
-<link rel="stylesheet" href="app.css">
-</head>
-<body>
-<a class="skip" href="#board">Skip to the board</a>
-<main id="board" tabindex="-1" aria-busy="true"></main>
-<script src="../data.js"></script>
-<script src="app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Token Radar ranks pre-token DeFi protocols by implied value, priced the way the market prices the protocols that already trade."
+    />
+    <title>Token Radar — pre-token protocols, ranked by implied value</title>
+    <link href="app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip" href="#board">Skip to the board</a>
+    <main id="board" tabindex="-1" aria-busy="true" aria-live="polite">
+      <p class="loading">Loading the board&hellip;</p>
+    </main>
+    <noscript>
+      <p class="noscript">
+        Token Radar is a static page that renders in your browser. Turn JavaScript on
+        to see the ranked board.
+      </p>
+    </noscript>
+    <script src="../data.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
